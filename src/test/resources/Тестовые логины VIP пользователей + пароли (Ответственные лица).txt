@@ -1,0 +1,2 @@
+Укажите логин и пароль пользователя VIP с ролью "ОЛ" через знак ",":
+TestoviiPolzovatelAQA@komus.ru,Qwert12345
