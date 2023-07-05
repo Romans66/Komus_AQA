@@ -16,7 +16,6 @@ public class StringHelper {
 
         return sb.toString();
     }
-
     public static String getRandomRussianString(int length) {
         String alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
         StringBuilder sb = new StringBuilder();
