@@ -1,6 +1,7 @@
 package Pages.PersonalCab;
 
 import BaseSteps.BaseSteps;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,9 +17,8 @@ public class PersonalCabFirstCompanyAddPage extends BaseSteps {
 
   public void ClickOnCompanyYesButton() {
     try {
-      WaitElementShouldBeClick(companyAddButton);
       clickOnButton(companyAddButton);
-    } catch (Exception e) {
+    } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
 

@@ -1,6 +1,7 @@
 package Pages.RegAndAuth;
 
 import BaseSteps.BaseSteps;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,7 +57,7 @@ public class RegPage extends BaseSteps {
   public void ClickOnRegButton() {
       try {
         clickOnButton(regButton);
-      } catch (Exception e) {
+      } catch (NoSuchElementException e) {
         e.printStackTrace();
       }
     }
