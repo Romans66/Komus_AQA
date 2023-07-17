@@ -80,7 +80,7 @@ public class VipSettingsUserAdd extends BaseSteps {
       WebElement elementOfList = chooseRandomElementFromList(listsOfElements);
       moveAndClick(elementOfList);
       clickOnButton(consigneeChooseButton);
-    } catch (NoSuchElementException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }

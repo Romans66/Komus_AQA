@@ -13,9 +13,9 @@ import static Tests.SettingsForTests.driver;
 
 public interface Const {
   // Общие константы
-  public static WebDriver DRIVER = driver;
-  public static Actions ACTIONS = new Actions(driver);
-  public static WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofMillis(Long.parseLong(ConfProperties.getProperty("login.page.time_out"))));
-  public static JavascriptExecutor EXECUTOR = (JavascriptExecutor) DRIVER;
-  public static Random random = new Random();
+  WebDriver DRIVER = driver;
+  Actions ACTIONS = new Actions(driver);
+  WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofMillis(Long.parseLong(ConfProperties.getProperty("login.page.time_out"))));
+  JavascriptExecutor EXECUTOR = (JavascriptExecutor) DRIVER;
+  Random random = new Random();
 }

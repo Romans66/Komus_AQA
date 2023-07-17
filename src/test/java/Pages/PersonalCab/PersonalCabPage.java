@@ -26,11 +26,9 @@ public class PersonalCabPage extends BaseSteps {
   //Общий блок после добавления компании
   public void ClickOnPopupButtons() {
     try {
-    WaitElementShouldBeClick(popapButton1);
     clickOnButton(popapButton1);
-    WaitElementShouldBeClick(popapButton2);
     clickOnButton(popapButton2);
-    } catch (Exception e) {
+    } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
   }
