@@ -11,28 +11,26 @@ import Pages.PersonalCabVip.VipSettingsUserAdd;
 import Pages.PersonalCabVip.VipSettingsUserList;
 import Pages.RegAndAuth.AuthPage;
 import Pages.RegAndAuth.RegPage;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 
 public abstract class SettingsForTests implements ITest, TechnicalConst, Const {
-  //Создаем и инициализируем драйвер через класс "DriverCreator"
-  public static WebDriver driver = DriverCreator.DriverCreator();
+
   // Экземпляры общих элементов страниц
-  public static HeaderElementOfPage headerElementOfPage = new HeaderElementOfPage(driver);
+  protected static HeaderElementOfPage headerElementOfPage = new HeaderElementOfPage(driver);
   //Экземпляры страниц для тестов
-  public static RegPage regPage = new RegPage(driver);
-  public static AuthPage authPage = new AuthPage(driver);
-  public static PersonalCabPage personalCabPage = new PersonalCabPage(driver);
-  public static PersonalCabFirstCompanyAddPage personalCabFirstCompanyAddPage = new PersonalCabFirstCompanyAddPage(driver);
-  public static PersonalCabSecondCompanyAddPage personalCabSecondCompanyAddPage = new PersonalCabSecondCompanyAddPage(driver);
-  public static PersonalCabFinalCompanyAddPage personalCabFinalCompanyAddPage = new PersonalCabFinalCompanyAddPage(driver);
-  public static PersonalCabCompanySpecPwdAddPage personalCabCompanySpecPwdAddPage = new PersonalCabCompanySpecPwdAddPage(driver);
+  protected static RegPage regPage = new RegPage(driver);
+  protected static AuthPage authPage = new AuthPage(driver);
+  protected static PersonalCabPage personalCabPage = new PersonalCabPage(driver);
+  protected static PersonalCabFirstCompanyAddPage personalCabFirstCompanyAddPage = new PersonalCabFirstCompanyAddPage(driver);
+  protected static PersonalCabSecondCompanyAddPage personalCabSecondCompanyAddPage = new PersonalCabSecondCompanyAddPage(driver);
+  protected static PersonalCabFinalCompanyAddPage personalCabFinalCompanyAddPage = new PersonalCabFinalCompanyAddPage(driver);
+  protected static PersonalCabCompanySpecPwdAddPage personalCabCompanySpecPwdAddPage = new PersonalCabCompanySpecPwdAddPage(driver);
 
   //Экземпляры классов страниц VIP
-  public static VipPersonalCabPage vipPersonalCabPage = new VipPersonalCabPage(driver);
-  public static VipSettingsOfCompany vipSettingsOfCompany = new VipSettingsOfCompany(driver);
-  public static VipSettingsUserList vipSettingsUserList = new VipSettingsUserList(driver);
-  public static VipSettingsUserAdd vipSettingsUserAdd = new VipSettingsUserAdd(driver);
+  protected static VipPersonalCabPage vipPersonalCabPage = new VipPersonalCabPage(driver);
+  protected static VipSettingsOfCompany vipSettingsOfCompany = new VipSettingsOfCompany(driver);
+  protected static VipSettingsUserList vipSettingsUserList = new VipSettingsUserList(driver);
+  protected static VipSettingsUserAdd vipSettingsUserAdd = new VipSettingsUserAdd(driver);
 
   @AfterTest
   public void AfterTest() throws InterruptedException {

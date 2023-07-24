@@ -40,7 +40,6 @@ public class AuthPage extends BaseSteps {
       inputText(randomEmail, inputAuthEmail);
       inputText(randomPwd, inputAuthPwd);
       System.out.println(randomEmail + " " + randomPwd);
-
   }
   public void AuthBySaveData() {
     inputText(EmailTempVariableGetter(), inputAuthEmail);

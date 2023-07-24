@@ -65,4 +65,3 @@ public class ChooseCompanyTest extends SettingsForTests {
     assertTrue(personalCabPage.AssertTextAllert().contains("Компания ") & personalCabPage.AssertTextAllert().contains(" успешно добавлена"));
   }
 }
-
