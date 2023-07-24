@@ -50,7 +50,7 @@ public class BaseSteps implements PathConst, Const, TechnicalConst {
         System.out.println("Индекс выбранного рандомного элемента из коллекции "+ index);
         return elements.get(index);
     }
-
+    // Возвращает список элементов из веб страницы
     protected final List<WebElement> ListsOfElements(By by) {
         List<WebElement> listOfElements = DRIVER.findElements(by);
         return listOfElements;
@@ -82,7 +82,6 @@ public class BaseSteps implements PathConst, Const, TechnicalConst {
     // Удаление элемента из DOM
     public void DeleteAlertCompanyMessage(WebElement element) {
         try {
-        WaitElementShouldBeClick(element);
         //
         EXECUTOR.executeScript("arguments[0].remove();", element);
 
@@ -107,7 +106,7 @@ public class BaseSteps implements PathConst, Const, TechnicalConst {
 
 
     // Переключение на модальное окно и скролл к элементу
-    public void switchToModalWindowAndScrollToElement(WebElement modalWindowLocator, WebElement element) {
+    public void switchToModalWindowAndScrollToElement(WebElement element) {
         // Запоминаем идентификатор текущего окна
         String parentWindowHandle = DRIVER.getWindowHandle();
 

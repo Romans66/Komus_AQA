@@ -2,6 +2,7 @@ package utils;
 
 import Const.Const;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ActualURLReturnHelper implements Const {
@@ -13,7 +14,7 @@ public class ActualURLReturnHelper implements Const {
     try {
       //
       url = new URL(actualURL);
-    } catch (Exception e) {
+    } catch (MalformedURLException e) {
       e.printStackTrace();
     }
     String relativePath = url.getPath();
