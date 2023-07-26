@@ -15,12 +15,12 @@ public class PersonalCabFirstCompanyAddPage extends BaseSteps {
   @FindBy(xpath = "//button[@value='yes']")
   private WebElement companyAddButton;
 
-  public void ClickOnCompanyYesButton() {
+  public PersonalCabFirstCompanyAddPage ClickOnCompanyYesButton() {
     try {
       clickOnButton(companyAddButton);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
-
+    return new PersonalCabFirstCompanyAddPage(DRIVER);
   }
 }

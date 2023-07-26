@@ -107,8 +107,7 @@ public class FeedBackPage extends BaseSteps {
             return false;
         }
     }
-
-    }
+}
 
 
 

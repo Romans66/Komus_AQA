@@ -32,7 +32,7 @@ public class RegPage extends BaseSteps {
   @FindBy(xpath = "//div[@class='v-form-row v-captcha__container v-form-row--indent-l']")
   private WebElement captchaReg;
 
-  public void RegInput() {
+  public RegPage RegInput() {
     // Проверяем наличие капчи
     if (PresentElement(captchaReg)) {
       //Если есть - тест падает с сообщением в стектрейсе
@@ -44,22 +44,26 @@ public class RegPage extends BaseSteps {
       inputText(StringHelper.getMail(), inputRegEmail);
       inputText(PassGeneratorHelper.generatePassword(), inputRegPwd);
     }
+    return new RegPage(DRIVER);
   }
 
-  public void chooseB2bBox() {
+  public RegPage ChooseB2bBox() {
       moveAndClick(checkBoxB2b);
+    return new RegPage(DRIVER);
     }
-  public void chooseMailingBox() {
+  public RegPage ChooseMailingBox() {
       if (getRandomBoolean()) {
         moveAndClick(checkBoxMailing);
       }
+    return new RegPage(DRIVER);
     }
-  public void ClickOnRegButton() {
+  public RegPage ClickOnRegButton() {
       try {
         clickOnButton(regButton);
       } catch (NoSuchElementException e) {
         e.printStackTrace();
       }
+    return new RegPage(DRIVER);
     }
   }
 

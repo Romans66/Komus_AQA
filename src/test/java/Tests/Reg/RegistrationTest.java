@@ -1,6 +1,7 @@
 package Tests.Reg;
 
 import Tests.SettingsForTests;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.ConfProperties;
@@ -10,19 +11,21 @@ public class RegistrationTest extends SettingsForTests {
     /**
      * Первоначальная настройка
      */
-    @BeforeTest
+    @BeforeMethod
     public void BeforeStart() {
       driver.get(ConfProperties.getProperty("RegPage"));
     }
 
     @Test
     public void Start() {
-      //Вводим ФИО, телефон, E-mail, Сгенерированный пароль
-      regPage.RegInput();
-      //Рандомно проставляем чекбокс подписки на рассылку
-      regPage.chooseMailingBox();
-      //Нажимаем на кнопку "Регистрация"
-      regPage.ClickOnRegButton();
+
+      regPage
+              //Вводим ФИО, телефон, E-mail, Сгенерированный пароль
+              .RegInput()
+              //Рандомно проставляем чекбокс подписки на рассылку
+              .ChooseMailingBox()
+              //Нажимаем на кнопку "Регистрация"
+              .ClickOnRegButton();
     }
 }
 
