@@ -24,18 +24,20 @@ public class PersonalCabCompanySpecPwdAddPage extends BaseSteps {
 
 
   //Блок добавления компании по спецпаролю
-  public void InputRandomSpecPwd() {
+  public PersonalCabCompanySpecPwdAddPage InputRandomSpecPwd() {
     String randomSpecPwd = ReadFileLineByLine(PATHSPECPWD).get(getRandomInt(ReadFileLineByLine(PATHSPECPWD).size()));
     WaitElementShouldBeClick(inputSpecialPwd);
     inputText(randomSpecPwd, inputSpecialPwd);
     System.out.println(ReadFileLineByLine(PATHSPECPWD));
+    return new PersonalCabCompanySpecPwdAddPage(DRIVER);
   }
 
-  public void ClickOnAddCompanyButtonSpecialPwd() {
+  public PersonalCabCompanySpecPwdAddPage ClickOnAddCompanyButtonSpecialPwd() {
      try {
        clickOnButton(addCompanyButtonSpecialPwd);
      } catch (NoSuchElementException e) {
        e.printStackTrace();
      }
+    return new PersonalCabCompanySpecPwdAddPage(DRIVER);
   }
 }

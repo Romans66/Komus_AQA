@@ -24,13 +24,14 @@ public class PersonalCabPage extends BaseSteps {
   private WebElement popapButton2;
 
   //Общий блок после добавления компании
-  public void ClickOnPopupButtons() {
+  public PersonalCabPage ClickOnPopupButtons() {
     try {
     clickOnButton(popapButton1);
     clickOnButton(popapButton2);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
+    return new PersonalCabPage(DRIVER);
   }
   // Проверяем что на странице присутствуют: Алерт и компания в хедере
   public boolean IsElementPresent() {

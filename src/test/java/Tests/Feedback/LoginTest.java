@@ -5,6 +5,7 @@ import Tests.SettingsForTests;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeMethod;
 import utils.ConfProperties;
 
 import java.time.Duration;
@@ -18,7 +19,7 @@ public class LoginTest extends SettingsForTests {
     /**
      * осуществление первоначальной настройки
      */
-    @BeforeAll
+    @BeforeMethod
     public void BeforeStart() {
         //Создание экземпляра класса страниц автотеста и передача в него драйвера, передаем страницу для браузера
         loginPage = new FeedBackPage(driver);

@@ -27,22 +27,24 @@ public class PersonalCabSecondCompanyAddPage extends BaseSteps {
   @FindBy(xpath = "//a[text() = 'Я знаю спецпароль']")
   private WebElement specialPwdLink;
 
-  public void ClickOnSpecPwdLink() {
+  public PersonalCabSecondCompanyAddPage ClickOnSpecPwdLink() {
     try {
       clickOnButton(specialPwdLink);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
+    return new PersonalCabSecondCompanyAddPage(DRIVER);
   }
-  public void ClickOnAddCompanyButtonInnKk() {
+  public PersonalCabSecondCompanyAddPage ClickOnAddCompanyButtonInnKk() {
     try {
       clickOnButton(AddCompanyButtonInnKk);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
+    return new PersonalCabSecondCompanyAddPage(DRIVER);
   }
 
-  public void InputRandomInnAndKk() {
+  public PersonalCabSecondCompanyAddPage InputRandomInnAndKk() {
     System.out.println(ReadFileLineByLineWithSplit(PATHINNKK));
     int randomCounter = getRandomInt(ReadFileLineByLineWithSplit(PATHINNKK).size());
     int i = 0;
@@ -58,6 +60,7 @@ public class PersonalCabSecondCompanyAddPage extends BaseSteps {
     inputText(randomInn, inputInn);
     inputText(randomKk, inputKk);
     System.out.println(randomInn + " " + randomKk);
+    return new PersonalCabSecondCompanyAddPage(DRIVER);
   }
 }
 

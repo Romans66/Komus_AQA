@@ -64,16 +64,17 @@ public class VipSettingsUserAdd extends BaseSteps {
   protected By rolesListBy = By.xpath("//li[@class='ui-menu-item']");
 
   // Выбор Подразделения
-  public void VipSubdivisionChoose() {
+  public VipSettingsUserAdd VipSubdivisionChoose() {
     clickOnButton(subdivisionsManagementButton);
     List listsOfElements = ListsOfElements(subdivisionsListBy);
     WebElement elementOfList = chooseRandomElementFromList(listsOfElements);
     moveAndClick(elementOfList);
     clickOnButton(subdivisionsChooseButton);
+    return new VipSettingsUserAdd(DRIVER);
   }
 
   // Выбор грузополучателя
-  public void VipConsigneeChoose() {
+  public VipSettingsUserAdd VipConsigneeChoose() {
     try {
       clickOnButton(consigneeAddButton);
       List listsOfElements = ListsOfElements(consigneeListBy);
@@ -83,9 +84,10 @@ public class VipSettingsUserAdd extends BaseSteps {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    return new VipSettingsUserAdd(DRIVER);
   }
   // Выбор Роли
-  public void VipRoleChoose() {
+  public VipSettingsUserAdd VipRoleChoose() {
     try {
     clickOnButton(rolesDropdown);
     List listsOfElements = ListsOfElements(rolesListBy);
@@ -94,10 +96,11 @@ public class VipSettingsUserAdd extends BaseSteps {
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
+    return new VipSettingsUserAdd(DRIVER);
   }
 
   // Заполнение полей данными о сотруднике
-  public void VipDataInput() {
+  public VipSettingsUserAdd VipDataInput() {
     try {
       // Заполняем рандомными данными прочие поля
       inputText(getRandomRussianString(RANDOMSIZEOFSTRING), inputFirstName);
@@ -110,8 +113,9 @@ public class VipSettingsUserAdd extends BaseSteps {
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
+    return new VipSettingsUserAdd(DRIVER);
   }
-    public void VipPwdAndEmailInput() {
+    public VipSettingsUserAdd VipPwdAndEmailInput() {
       // Генерируем пароль и email
       String email = StringHelper.getMail();
       String pwd = PassGeneratorHelper.generatePassword();
@@ -126,10 +130,12 @@ public class VipSettingsUserAdd extends BaseSteps {
       }
       // Запоминаем сгенерированные емаил и пароль
       StringTempVariableSetter (email, pwd);
+      return new VipSettingsUserAdd(DRIVER);
     }
 
-    public void VipClickOnSaveButton() {
+    public VipSettingsUserAdd VipClickOnSaveButton() {
       clickOnButton(SaveButton);
+      return new VipSettingsUserAdd(DRIVER);
     }
 
 }

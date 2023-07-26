@@ -20,13 +20,15 @@ public class VipPersonalCabPage extends BaseSteps {
 
 
 
-  public void ClickOnOptionsOfCompanyLink() {
+  public VipPersonalCabPage ClickOnOptionsOfCompanyLink() {
     clickOnButton(optionsOfCompanyLink);
+    return new VipPersonalCabPage(DRIVER);
   }
-  public void CheckAndDeleteAlertCompanyMessage() {
+  public VipPersonalCabPage CheckAndDeleteAlertCompanyMessage() {
     if (PresentElement(wrapperBackWindow)) {
       DeleteAlertCompanyMessage(wrapperBackWindow);
     }
+    return new VipPersonalCabPage(DRIVER);
   }
 
 

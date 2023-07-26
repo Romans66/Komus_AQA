@@ -24,7 +24,7 @@ public class AuthPage extends BaseSteps {
   private WebElement captchaAuth;
 
 
-  public void RandomAuth() {
+  public AuthPage RandomAuth() {
       System.out.println(ReadFileLineByLineWithSplit(PATHVIPAUTHOL));
       int randomCounter = getRandomInt(ReadFileLineByLineWithSplit(PATHVIPAUTHOL).size());
       int i = 0;
@@ -40,12 +40,15 @@ public class AuthPage extends BaseSteps {
       inputText(randomEmail, inputAuthEmail);
       inputText(randomPwd, inputAuthPwd);
       System.out.println(randomEmail + " " + randomPwd);
+      return new AuthPage(DRIVER);
   }
-  public void AuthBySaveData() {
+  public AuthPage AuthBySaveData() {
     inputText(EmailTempVariableGetter(), inputAuthEmail);
     inputText(PwdTempVariableGetter(), inputAuthPwd);
+    return new AuthPage(DRIVER);
   }
-  public void ClickOnAuthButton() {
+  public AuthPage ClickOnAuthButton() {
     clickOnButton(authButton);
+    return new AuthPage(DRIVER);
   }
 }

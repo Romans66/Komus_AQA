@@ -16,10 +16,12 @@ public class HeaderElementOfPage extends BaseSteps {
   @FindBy(xpath = "//div[@class='login-account js-login-popup']")
   private WebElement loginButton;
 
-  public void ClickOnLogoutButton() {
+  public HeaderElementOfPage ClickOnLogoutButton() {
     moveAndClick(logoutButton);
+    return new HeaderElementOfPage(DRIVER);
   }
-  public void ClickOnLoginButton() {
+  public HeaderElementOfPage ClickOnLoginButton() {
     moveAndClick(loginButton);
+    return new HeaderElementOfPage(DRIVER);
   }
 }
