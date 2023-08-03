@@ -33,8 +33,12 @@ public abstract class SettingsForTests implements ITest, TechnicalConst, Const {
   protected static VipSettingsUserAdd vipSettingsUserAdd = new VipSettingsUserAdd(driver);
 
   @AfterTest
-  public void AfterTest() throws InterruptedException {
-    Thread.sleep(MILLISFORQUIT);
+  public void AfterTest() {
+    try {
+      Thread.sleep(MILLISFORQUIT);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
     driver.close();
   }
 }

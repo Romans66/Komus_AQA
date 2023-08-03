@@ -15,6 +15,7 @@ public class RegPage extends BaseSteps {
   public RegPage(WebDriver driver) {
     super(driver);
   }
+
   @FindBy(xpath = "//input[@placeholder='Имя']")
   private WebElement inputRegName;
   @FindBy(xpath = "//input[@name='phone']")
@@ -48,22 +49,24 @@ public class RegPage extends BaseSteps {
   }
 
   public RegPage ChooseB2bBox() {
-      moveAndClick(checkBoxB2b);
+    moveAndClick(checkBoxB2b);
     return new RegPage(DRIVER);
-    }
-  public RegPage ChooseMailingBox() {
-      if (getRandomBoolean()) {
-        moveAndClick(checkBoxMailing);
-      }
-    return new RegPage(DRIVER);
-    }
-  public RegPage ClickOnRegButton() {
-      try {
-        clickOnButton(regButton);
-      } catch (NoSuchElementException e) {
-        e.printStackTrace();
-      }
-    return new RegPage(DRIVER);
-    }
   }
+
+  public RegPage ChooseMailingBox() {
+    if (getRandomBoolean()) {
+      moveAndClick(checkBoxMailing);
+    }
+    return new RegPage(DRIVER);
+  }
+
+  public RegPage ClickOnRegButton() {
+    try {
+      clickOnButton(regButton);
+    } catch (NoSuchElementException e) {
+      e.printStackTrace();
+    }
+    return new RegPage(DRIVER);
+  }
+}
 

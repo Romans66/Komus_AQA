@@ -9,6 +9,7 @@ public class VipSettingsOfCompany extends BaseSteps {
   public VipSettingsOfCompany(WebDriver driver) {
     super(driver);
   }
+
   @FindBy(xpath = "//a[@class='navigation__link '][1]")
   private WebElement settingsOfVipUsersLink;
 

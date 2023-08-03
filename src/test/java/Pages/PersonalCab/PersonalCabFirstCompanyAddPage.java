@@ -12,6 +12,7 @@ public class PersonalCabFirstCompanyAddPage extends BaseSteps {
     super(driver);
 
   }
+
   @FindBy(xpath = "//button[@value='yes']")
   private WebElement companyAddButton;
 

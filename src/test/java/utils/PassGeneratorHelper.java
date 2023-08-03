@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class PassGeneratorHelper {
   private static final Random RANDOM = new Random();
+
   public static String generatePassword() {
     // Используем символы в высоком, низком регистре, а также цифры
     String capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

@@ -8,24 +8,24 @@ import utils.ConfProperties;
 
 public class RegistrationTest extends SettingsForTests {
 
-    /**
-     * Первоначальная настройка
-     */
-    @BeforeMethod
-    public void BeforeStart() {
-      driver.get(ConfProperties.getProperty("RegPage"));
-    }
+  /**
+   * Первоначальная настройка
+   */
+  @BeforeMethod
+  public void BeforeStart() {
+    driver.get(ConfProperties.getProperty("RegPage"));
+  }
 
-    @Test
-    public void Start() {
+  @Test
+  public void Start() {
 
-      regPage
-              //Вводим ФИО, телефон, E-mail, Сгенерированный пароль
-              .RegInput()
-              //Рандомно проставляем чекбокс подписки на рассылку
-              .ChooseMailingBox()
-              //Нажимаем на кнопку "Регистрация"
-              .ClickOnRegButton();
-    }
+    regPage
+            //Вводим ФИО, телефон, E-mail, Сгенерированный пароль
+            .RegInput()
+            //Рандомно проставляем чекбокс подписки на рассылку
+            .ChooseMailingBox()
+            //Нажимаем на кнопку "Регистрация"
+            .ClickOnRegButton();
+  }
 }
 

@@ -26,23 +26,25 @@ public class PersonalCabPage extends BaseSteps {
   //Общий блок после добавления компании
   public PersonalCabPage ClickOnPopupButtons() {
     try {
-    clickOnButton(popapButton1);
-    clickOnButton(popapButton2);
+      clickOnButton(popapButton1);
+      clickOnButton(popapButton2);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
     return new PersonalCabPage(DRIVER);
   }
+
   // Проверяем что на странице присутствуют: Алерт и компания в хедере
   public boolean IsElementPresent() {
     try {
-      assertTrue(PresentElement (succesAllertAddCompany));
-      assertTrue(PresentElement (headerCompanyLink));
+      assertTrue(PresentElement(succesAllertAddCompany));
+      assertTrue(PresentElement(headerCompanyLink));
       return true;
     } catch (NoSuchElementException e) {
       return false;
     }
   }
+
   public String AssertTextAllert() {
     //Забираем текст из аллерта
     String successMessage = succesAllertAddCompany.getText();

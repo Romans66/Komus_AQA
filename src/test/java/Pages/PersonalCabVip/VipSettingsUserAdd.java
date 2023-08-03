@@ -20,6 +20,7 @@ public class VipSettingsUserAdd extends BaseSteps {
   public VipSettingsUserAdd(WebDriver driver) {
     super(driver);
   }
+
   @FindBy(xpath = "//input[@name='firstName']")
   WebElement inputFirstName;
   @FindBy(xpath = "//input[@name='middleName']")
@@ -86,13 +87,14 @@ public class VipSettingsUserAdd extends BaseSteps {
     }
     return new VipSettingsUserAdd(DRIVER);
   }
+
   // Выбор Роли
   public VipSettingsUserAdd VipRoleChoose() {
     try {
-    clickOnButton(rolesDropdown);
-    List listsOfElements = ListsOfElements(rolesListBy);
-    WebElement elementOfList = chooseRandomElementFromList(listsOfElements);
-    moveAndClick(elementOfList);
+      clickOnButton(rolesDropdown);
+      List listsOfElements = ListsOfElements(rolesListBy);
+      WebElement elementOfList = chooseRandomElementFromList(listsOfElements);
+      moveAndClick(elementOfList);
     } catch (NoSuchElementException e) {
       e.printStackTrace();
     }
@@ -115,27 +117,28 @@ public class VipSettingsUserAdd extends BaseSteps {
     }
     return new VipSettingsUserAdd(DRIVER);
   }
-    public VipSettingsUserAdd VipPwdAndEmailInput() {
-      // Генерируем пароль и email
-      String email = StringHelper.getMail();
-      String pwd = PassGeneratorHelper.generatePassword();
-      try {
+
+  public VipSettingsUserAdd VipPwdAndEmailInput() {
+    // Генерируем пароль и email
+    String email = StringHelper.getMail();
+    String pwd = PassGeneratorHelper.generatePassword();
+    try {
       //Заполнение e-mail и пароля
       inputText(email, inputEmail);
       //Генерация пароля и повтор его во второй строке
       inputText(pwd, inputPwd);
       inputText(pwd, inputPwd2);
-      } catch (NoSuchElementException e) {
-        e.printStackTrace();
-      }
-      // Запоминаем сгенерированные емаил и пароль
-      StringTempVariableSetter (email, pwd);
-      return new VipSettingsUserAdd(DRIVER);
+    } catch (NoSuchElementException e) {
+      e.printStackTrace();
     }
+    // Запоминаем сгенерированные емаил и пароль
+    StringTempVariableSetter(email, pwd);
+    return new VipSettingsUserAdd(DRIVER);
+  }
 
-    public VipSettingsUserAdd VipClickOnSaveButton() {
-      clickOnButton(SaveButton);
-      return new VipSettingsUserAdd(DRIVER);
-    }
+  public VipSettingsUserAdd VipClickOnSaveButton() {
+    clickOnButton(SaveButton);
+    return new VipSettingsUserAdd(DRIVER);
+  }
 
 }

@@ -11,12 +11,15 @@ import org.testng.annotations.Test;
 public interface ITest extends PagesURLConst {
   //Создаем и инициализируем драйвер через класс "DriverCreator"
   WebDriver driver = DriverCreator.DriverCreator();
+
   @BeforeMethod
   void BeforeStart();
+
   @Test
   void Start();
+
   @AfterTest
-  void AfterTest() throws InterruptedException;
+  void AfterTest();
 }
 
 
