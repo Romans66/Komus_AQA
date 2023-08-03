@@ -25,28 +25,30 @@ public class AuthPage extends BaseSteps {
 
 
   public AuthPage RandomAuth() {
-      System.out.println(ReadFileLineByLineWithSplit(PATHVIPAUTHOL));
-      int randomCounter = getRandomInt(ReadFileLineByLineWithSplit(PATHVIPAUTHOL).size());
-      int i = 0;
-      String randomEmail = null;
-      for (String key : ReadFileLineByLineWithSplit(PATHVIPAUTHOL).keySet()) {
-        if (i == randomCounter) {
-          randomEmail = key;
-          break;
-        }
-        i++;
+    System.out.println(ReadFileLineByLineWithSplit(PATHVIPAUTHOL));
+    int randomCounter = getRandomInt(ReadFileLineByLineWithSplit(PATHVIPAUTHOL).size());
+    int i = 0;
+    String randomEmail = null;
+    for (String key : ReadFileLineByLineWithSplit(PATHVIPAUTHOL).keySet()) {
+      if (i == randomCounter) {
+        randomEmail = key;
+        break;
       }
-      String randomPwd = ReadFileLineByLineWithSplit(PATHVIPAUTHOL).get(randomEmail);
-      inputText(randomEmail, inputAuthEmail);
-      inputText(randomPwd, inputAuthPwd);
-      System.out.println(randomEmail + " " + randomPwd);
-      return new AuthPage(DRIVER);
+      i++;
+    }
+    String randomPwd = ReadFileLineByLineWithSplit(PATHVIPAUTHOL).get(randomEmail);
+    inputText(randomEmail, inputAuthEmail);
+    inputText(randomPwd, inputAuthPwd);
+    System.out.println(randomEmail + " " + randomPwd);
+    return new AuthPage(DRIVER);
   }
+
   public AuthPage AuthBySaveData() {
     inputText(EmailTempVariableGetter(), inputAuthEmail);
     inputText(PwdTempVariableGetter(), inputAuthPwd);
     return new AuthPage(DRIVER);
   }
+
   public AuthPage ClickOnAuthButton() {
     clickOnButton(authButton);
     return new AuthPage(DRIVER);

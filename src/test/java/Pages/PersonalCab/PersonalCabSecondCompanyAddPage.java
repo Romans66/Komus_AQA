@@ -35,6 +35,7 @@ public class PersonalCabSecondCompanyAddPage extends BaseSteps {
     }
     return new PersonalCabSecondCompanyAddPage(DRIVER);
   }
+
   public PersonalCabSecondCompanyAddPage ClickOnAddCompanyButtonInnKk() {
     try {
       clickOnButton(AddCompanyButtonInnKk);

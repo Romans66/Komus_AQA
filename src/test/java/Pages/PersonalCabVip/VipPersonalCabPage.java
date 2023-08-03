@@ -19,11 +19,11 @@ public class VipPersonalCabPage extends BaseSteps {
   private WebElement wrapperBackWindow;
 
 
-
   public VipPersonalCabPage ClickOnOptionsOfCompanyLink() {
     clickOnButton(optionsOfCompanyLink);
     return new VipPersonalCabPage(DRIVER);
   }
+
   public VipPersonalCabPage CheckAndDeleteAlertCompanyMessage() {
     if (PresentElement(wrapperBackWindow)) {
       DeleteAlertCompanyMessage(wrapperBackWindow);

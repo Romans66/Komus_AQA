@@ -69,7 +69,7 @@ public class ChooseCompanyTest extends SettingsForTests {
             .ClickOnFinalAddCompanyButton();
 
     // Проверка URL ЛК
-    assertEquals(ActualURL(),personalCabPageURL);
+    assertEquals(ActualURL(), personalCabPageURL);
 
     personalCabPage
             //Нажать на кнопки "Продолжить" и "Закрыть" в поп-апах онбординга
@@ -80,7 +80,6 @@ public class ChooseCompanyTest extends SettingsForTests {
             .IsElementPresent();
 
     // Проверяем текст в алерте на наличие ключевых слов
-    assertTrue(personalCabPage.AssertTextAllert().contains("Компания ")
-            & personalCabPage.AssertTextAllert().contains(" успешно добавлена"));
+    assertTrue(personalCabPage.AssertTextAllert().contains("Компания ") & personalCabPage.AssertTextAllert().contains(" успешно добавлена"));
   }
 }

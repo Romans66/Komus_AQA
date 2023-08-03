@@ -12,6 +12,7 @@ public class PersonalCabFinalCompanyAddPage extends BaseSteps {
     super(driver);
 
   }
+
   @FindBy(xpath = "//input[@value = 'Подключить']")
   private WebElement finalAddCompanyButton;
 

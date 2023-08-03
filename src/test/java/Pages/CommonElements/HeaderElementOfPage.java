@@ -20,6 +20,7 @@ public class HeaderElementOfPage extends BaseSteps {
     moveAndClick(logoutButton);
     return new HeaderElementOfPage(DRIVER);
   }
+
   public HeaderElementOfPage ClickOnLoginButton() {
     moveAndClick(loginButton);
     return new HeaderElementOfPage(DRIVER);

@@ -19,9 +19,9 @@ public class ReadFileLineHelper {
       while (line != null) {
         line = reader.readLine();
         if (line != null)
-        // обработка строки
-        //Записываем все строки в коллекцию, проверяя на null
-        specPwd.add(line);
+          // обработка строки
+          //Записываем все строки в коллекцию, проверяя на null
+          specPwd.add(line);
       }
       //Закрываем поток чтения из файла, освобождаем ресурсы
       reader.close();
@@ -31,14 +31,15 @@ public class ReadFileLineHelper {
     //Возвращаем коллекцию
     return specPwd;
   }
+
   public static LinkedHashMap<String, String> ReadFileLineByLineWithSplit(String fileName) {
     //Объявляем коллекцию
-    LinkedHashMap <String, String> innAndKk = new LinkedHashMap<>();
+    LinkedHashMap<String, String> innAndKk = new LinkedHashMap<>();
     try {
       //Читаем файл и помещаем его в буфер, далее помещаем в переменную
       BufferedReader reader = new BufferedReader(new FileReader(fileName));
       String line = reader.readLine();
-      while(line != null) {
+      while (line != null) {
         line = reader.readLine();
         if (line != null) {
           String[] compValues = line.split(",");
