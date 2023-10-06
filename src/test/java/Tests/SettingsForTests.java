@@ -39,6 +39,7 @@ public abstract class SettingsForTests implements ITest, TechnicalConst, Const {
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
-    driver.close();
+    driver.quit();
+    System.out.println("Browser and driver are closed.");
   }
 }

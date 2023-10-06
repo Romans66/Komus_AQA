@@ -64,7 +64,7 @@ public class VipAddNewUserTest extends SettingsForTests {
             .ClickOnLoginButton();
 
     authPage
-            // Заплднение полей данными ранее добавленного пользователя
+            // Заполнение полей данными ранее добавленного пользователя
             .AuthBySaveData()
             // Нажимаем кнопку "Войти"
             .ClickOnAuthButton();
